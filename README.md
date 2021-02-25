@@ -192,7 +192,7 @@ rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 	│   │   │   ├── robot_description.launch
 	│   │   │   ├── world.launch
 	│   │   ├── maps                           	   # maps folder for maps
-	│   │   │   ├── map.pgm
+	│   │   │   ├── map.pgm                    # download in the link: 'http://naver.me/GJr3jzHu'
 	│   │   │   ├── map.yaml
 	│   │   ├── meshes                         # meshes folder for sensors
 	│   │   │   ├── hokuyo.dae
@@ -251,6 +251,7 @@ $ catkin_init_workspace
 $ cd /home/workspace/catkin_ws/src
 $ git clone https://github.com/studian/RoboND-P3-Where_Am_I
 ```
+- map.pgm of 'my_robot/maps/' must be download in the link: 'http://naver.me/GJr3jzHu'
 
 ## Build Package
 
