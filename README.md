@@ -1,7 +1,8 @@
 
 # Udacity RoboND Project P3 - Where Am I
 Ros Kinematic "Monte Carlo Localization" Project  (Where Am I) Solution for Udacity Robotics Software Engineer Nanodegree Program
-result Link: https://youtu.be/ytv95UYO-HA
+
+-   Result Link: https://youtu.be/ytv95UYO-HA
 
 # Project Overview
 
@@ -58,7 +59,6 @@ Clone the package  `pgm_map_creator`  to your  `src`  folder.
 ```
 cd /home/workspace/catkin_ws/src/
 git clone https://github.com/udacity/pgm_map_creator.git
-
 ```
 
 Build the package:
@@ -66,7 +66,6 @@ Build the package:
 ```
 cd ..
 catkin_make
-
 ```
 
 ## Add and Edit the World File
@@ -75,14 +74,12 @@ Copy the Gazebo world you created to the  `world`  folder
 
 ```
 cp <YOUR GAZEBO WORLD FILE> src/pgm_map_creator/world/<YOUR GAZEBO WORLD FILE>
-
 ```
 
 Insert the map creator plugin to your map file. Open the map file using the editor of your choice. Add the following tag towards the end of the file, but just before  `</world>`  tag:
 
 ```
 <plugin filename="libcollision_map_creator.so" name="collision_map_creator"/>
-
 ```
 
 ## Create the PGM Map!
@@ -91,14 +88,12 @@ Open a terminal, run gzerver with the map file:
 
 ```
 gzserver src/pgm_map_creator/world/<YOUR GAZEBO WORLD FILE>
-
 ```
 
 Open another terminal, launch the request_publisher node
 
 ```
 roslaunch pgm_map_creator request_publisher.launch
-
 ```
 
 Wait for the plugin to generate map. It will be located in the map folder of the  `pgm_map_creator`! Open it to do a quick check of the map. If the map is cropped, you might want to adjust the parameters in  `launch/request_publisher.launch`, namely the  `x`  and  `y`  values, which defines the size of the map:
@@ -110,7 +105,6 @@ Wait for the plugin to generate map. It will be located in the map folder of the
   <arg name="ymax" default="15" />
   <arg name="scan_height" default="5" />
   <arg name="resolution" default="0.01" />
-
 ```
 
 ### Edit the Map
@@ -124,7 +118,6 @@ Now we have the map file, let us move it to where it is needed! That is the  `ma
 ```
 cd /home/workspace/catkin_ws/
 cp src/pgm_map_creator/maps/<YOUR MAP NAME>  src/<YOUR PACKAGE NAME>/maps/<YOUR MAP NAME>
-
 ```
 
 You would also need a  `yaml`  file providing the  [metadata about the map](http://wiki.ros.org/map_server#YAML_format). Create a  `yaml`  file next to your map:
@@ -132,7 +125,6 @@ You would also need a  `yaml`  file providing the  [metadata about the map](http
 ```
 cd src/<YOUR PACKAGE NAME>/src/maps
 touch <YOUR MAP NAME>.yaml
-
 ```
 
 Open the  `yaml`  file and add the following lines to it:
@@ -144,7 +136,6 @@ origin: [-15.0, -15.0, 0.0]
 occupied_thresh: 0.65
 free_thresh: 0.196
 negate: 0
-
 ```
 
 Note that the origin of the map should correspond to your map's size. For example, the default map size is 30 by 30, so the origin will be [-15, -15, 0], i.e. half the size of the map.
@@ -159,7 +150,6 @@ Clone the  `ros-teleop`  package to your  `src`  folder:
 ```
 cd /home/workspace/catkin_ws/src
 git clone https://github.com/ros-teleop/teleop_twist_keyboard
-
 ```
 
 Build the package and source the setup script:
@@ -168,7 +158,6 @@ Build the package and source the setup script:
 cd ..
 catkin_make
 source devel/setup.bash
-
 ```
 
 Now you could run the  `teleop`  script as is described in the  `README`  file:
@@ -191,7 +180,7 @@ rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 	│   │   │   ├── amcl.launch
 	│   │   │   ├── robot_description.launch
 	│   │   │   ├── world.launch
-	│   │   ├── maps                           	   # maps folder for maps
+	│   │   ├── maps                           # maps folder for maps
 	│   │   │   ├── map.pgm                    # download in the link: 'http://naver.me/GJr3jzHu'
 	│   │   │   ├── map.yaml
 	│   │   ├── meshes                         # meshes folder for sensors
@@ -231,8 +220,7 @@ rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 	│   │   ├── CMakeLists.txt                 # compiler instructions
 	│   │   ├── README.md                      # README for documentation
 	│   │   ├── package.xml                    # package info
-	│   │   ├── teleop_twist_keyboard.py       # keyboard controller
-                         
+	│   │   ├── teleop_twist_keyboard.py       # keyboard controller                         
 ```
 
 
@@ -251,7 +239,7 @@ $ catkin_init_workspace
 $ cd /home/workspace/catkin_ws/src
 $ git clone https://github.com/studian/RoboND-P3-Where_Am_I
 ```
-- map.pgm of 'my_robot/maps/' must be download in the link: 'http://naver.me/GJr3jzHu'
+-   map.pgm of 'my_robot/maps/' must be download in the link: 'http://naver.me/GJr3jzHu'
 
 ## Build Package
 
@@ -272,7 +260,6 @@ First, launch the simulation:
 $ cd /home/workspace/catkin_ws/
 $ roslaunch <YOUR PACKAGE NAME> <YOUR WORLD>.launch
 $ roslaunch my_robot world.launch
-
 ```
 
 In a new terminal, launch the  `amcl`  launch file:
@@ -280,7 +267,6 @@ In a new terminal, launch the  `amcl`  launch file:
 ```
 $ roslaunch <YOUR PACKAGE NAME> amcl.launch
 $ roslaunch my_robot amcl.launch
-
 ```
 
 In a new terminal, run teleop_twist_keyboard: 
