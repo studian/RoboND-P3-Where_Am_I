@@ -169,7 +169,7 @@ rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 
 # Project  Directory Structure
 ```
-        .[RoboND-P3-Where_Am_I]            # Where Am I Project
+        .[RoboND-P3-Where_Am_I]                    # Where Am I Project
 	├── my_robot                               # my_robot package        
 	│   │   ├── config                         # config folder for configuration files   
 	│   │   │   ├── base_local_planner_params.yaml
@@ -237,7 +237,7 @@ $ catkin_init_workspace
 #### Clone or Download This Project Under the /home/workspace/catkin_ws/src
 ```
 $ cd /home/workspace/catkin_ws/src
-$ git clone https://github.com/studian/RoboND-P3-Where_Am_I
+$ git clone https://github.com/studian/RoboND-P3-Where_Am_I.git
 ```
 -   map.pgm of 'my_robot/maps/' must be download in the link: 'http://naver.me/GJr3jzHu'
 
